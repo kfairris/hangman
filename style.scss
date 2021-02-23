@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono:wght@500&display=swap");
+
+//adding underlines to the Word
+$char-w: 1ch;
+$gap: 0.5 * $char-w;
+$n-char: 7;
+$in-w: $n-char * ($char-w + $gap);
 
 /* Box sizing rules */
 *,
@@ -17,6 +23,7 @@ body {
 
 body {
 	font-family: "Montserrat", sans-serif;
+	color: #222;
 	margin: 0;
 	padding: 0;
 }
@@ -45,7 +52,7 @@ body {
 	height: 20px;
 	border-right: #000 3px solid;
 }
-.word {
+.guess {
 	margin: 15px auto;
 	font-size: 2rem;
 }
@@ -56,7 +63,34 @@ a {
 	background-color: #fff;
 	border-radius: 5px;
 	text-decoration: none;
+	color: blue;
 }
+button {
+	border: 1px solid blue;
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #fff;
+	border-radius: 5px;
+	color: blue;
+	width: 250px;
+	margin: 10px auto;
+}
+#word {
+	font-family: "Roboto Mono", monospace;
+	margin: 10px auto;
+	font-size: 3rem;
+	text-decoration: underline;
+	letter-spacing: 16px;
+	color: #ddd; //used the hide the letter until it is guessed correctly.
+	text-decoration: underline;
+	text-decoration-color: #222;
+	span {
+		margin: 10px;
+	}
+}
+// .part {
+// 	visibility: hidden;
+// }
 
 //Thank you Ethan Thompson for the stick figure!
 //https://codepen.io/ethanthompson/pen/RrjMvW
@@ -118,7 +152,7 @@ a {
 		}
 	}
 }
-.letters {
+#letters {
 	text-align: center;
 	cursor: pointer;
 	display: flex;
